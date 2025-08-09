@@ -1,0 +1,84 @@
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.querySelector("nav ul");
+const langBtn = document.getElementById("langToggle");
+
+const modal = document.getElementById('modal');
+const modalMessage = document.getElementById('modal-message');
+const modalClose = document.getElementById('modal-close');
+
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});
+
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector("nav a.active")?.classList.remove("active");
+    link.classList.add("active");
+  });
+});
+
+langBtn.addEventListener("click", () => {
+  if (langBtn.textContent === "EN") {
+    langBtn.textContent = "AR";
+    document.body.setAttribute("dir", "rtl");
+    langBtn.classList.add("active");
+  } else {
+    langBtn.textContent = "EN";
+    document.body.setAttribute("dir", "ltr");
+    langBtn.classList.remove("active");
+  }
+});
+
+window.addEventListener("scroll", () => {
+  document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const target = document.querySelector(this.getAttribute("href"));
+    target.scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+
+window.addEventListener("load", () => {
+  document.querySelector(".loader").classList.add("hidden");
+  document.body.classList.remove("loading");
+});
+
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = this.name.value.trim();
+  const email = this.email.value.trim();
+  const subject = this.subject.value.trim();
+  const message = this.message.value.trim();
+
+  if (!name || !email || !subject || !message) {
+    showModal('Please fill in all fields.');
+    return;
+  }
+
+  const successMsg = `Message sent successfully!<br><br>`;
+
+  showModal(successMsg);
+  this.reset();
+});
+
+modalClose.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', e => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+function showModal(message) {
+  modalMessage.innerHTML = message;
+  modal.style.display = 'flex';
+}

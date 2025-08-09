@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logeen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="./logo.jpeg" alt="Logeen Logo">
+    <span>Logeen</span>
+  </div>
+
+  <nav id="navMenu">
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Testimonials</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <button class="lang-toggle" id="langToggle">EN</button>
+  <div class="menu-toggle" id="menuToggle">☰</div>
+</header>
+
+<section class="contact-section" id="contact">
+  <h2>Contact</h2>
+  <p class="subtitle">
+    Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+  </p>
+
+  <div class="contact-container">
+    <div class="contact-info">
+      <div class="info-box">
+        <h3>Address</h3>
+        <p>A108 Adam Street, New York, NY 535022</p>
+      </div>
+      <div class="info-box">
+        <h3>Call Us</h3>
+        <p>+1 5589 55488 55</p>
+      </div>
+      <div class="info-box">
+        <h3>Email Us</h3>
+        <p>info@example.com</p>
+      </div>
+        <div class="info-box map-box">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.7811165402853!2d-74.00594168459334!3d40.71277577933012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjAiTiA3NMKwMDAnMjEuMCJX!5e0!3m2!1sen!2sus!4v1616705992749!5m2!1sen!2sus" 
+            width="100%" 
+            height="250" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+    </div>
+
+    <form class="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="subject" placeholder="Subject" required />
+      <textarea name="message" placeholder="Message" rows="15" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="modal-close" class="modal-close">&times;</span>
+    <p id="modal-message"></p>
+  </div>
+</div>
+
+
+
+<script src="action.js"></script>
+</body>
+</html>

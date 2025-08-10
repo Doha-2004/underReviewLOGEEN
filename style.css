@@ -413,8 +413,14 @@ nav a.active {
   color: var(--color-white);
   padding: 40px 8% 20px;
   font-size: 14px;
+   opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-in-out;
 }
-
+.footer-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 .footer-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -424,6 +430,7 @@ nav a.active {
 .footer-about {
   max-width: 300px;
 }
+
 
 .footer-logo {
   width: 50px;

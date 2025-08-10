@@ -97,3 +97,40 @@ function showModal(message) {
   modalMessage.innerHTML = message;
   modal.style.display = 'flex';
 }
+// Footer 
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Animation on scroll
+  const footer = document.querySelector(".footer");
+  const footerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        footer.classList.add("footer-visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  footerObserver.observe(footer);
+
+  // Form validation
+  const form = document.querySelector(".footer-newsletter form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const emailInput = form.querySelector("input[type='email']");
+    const emailValue = emailInput.value.trim();
+
+    if (!validateEmail(emailValue)) {
+      alert("❌ Please enter a valid email address.");
+      emailInput.focus();
+    } else {
+      alert("✅ Thank you! We'll contact you soon.");
+      form.reset();
+    }
+  });
+
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+});

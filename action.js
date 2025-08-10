@@ -43,6 +43,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const aboutSection = document.querySelector(".about-us");
+
+  function handleScroll() {
+    const sectionTop = aboutSection.getBoundingClientRect().top;
+    const triggerPoint = window.innerHeight * 0.8;
+
+    if (sectionTop < triggerPoint) {
+      aboutSection.classList.add("visible");
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); 
+});
 
 window.addEventListener("load", () => {
   document.querySelector(".loader").classList.add("hidden");

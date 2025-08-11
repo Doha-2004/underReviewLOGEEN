@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Page metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projects</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Additional stylesheets -->
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- ===== Navigation Bar ===== -->
+    <header class="navbar">
+        <!-- Logo section -->
+        <div class="logo">
+            <img src="./Images/logo.jpeg" alt="Logeen Logo">
+            <span>Logeen</span>
+        </div>
+
+        <!-- Navigation menu -->
+        <nav id="navMenu">
+            <ul>
+                <li><a href="./index.html #hero" >Home</a></li>
+                <li><a href="./index.html #about">About</a></li>
+                <li><a href="./index.html #projects" class="active">Projects</a></li>
+                <li><a href="./index.html #testimonials">Testimonials</a></li>
+                <li><a href="./index.html #faq">FAQ</a></li>
+                <li><a href="./index.html #contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Language toggle button -->
+        <button class="lang-toggle" id="langToggle">EN</button>
+
+        <!-- Mobile menu toggle -->
+        <div class="menu-toggle" id="menuToggle">☰</div>
+    </header>
+
+    <!-- ===== Hero Section for Projects Page ===== -->
+    <section class="projects-hero">
+        <h1>Our Projects</h1>
+        <p>Discover our latest work in web development, mobile apps, and marketing.</p>
+    </section>
+
+    <!-- ===== Filter Buttons ===== -->
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+    </div>
+
+    <!-- ===== Projects Section ===== -->
+    <section class="projects-section">
+        <div class="projects-container" id="projectsContainer">
+
+            <!-- Single Project Card (Web) -->
+            <div class="project-card" data-category="web" id="project1">
+                <img src="./Images/project1.jpg" alt="Web Project">
+                <h3>Web Project 1</h3>
+                <p>Custom website design with modern UI/UX.</p>
+                <button onclick="location.href='project-details.html?id=project1'" class="view-project-btn">View Project</button>
+            </div>
+
+            <!-- Single Project Card (Mobile) -->
+            <div class="project-card" data-category="mobile" id="project2">
+                <img src="./Images/project2.jpg" alt="Mobile App">
+                <h3>Mobile App 1</h3>
+                <p>iOS and Android application for e-commerce.</p>
+                <button onclick="location.href='project-details.html?id=project2'" class="view-project-btn">View Project</button>
+            </div>
+
+            <!-- Single Project Card (Marketing) -->
+            <div class="project-card" data-category="marketing" id="project3">
+                <img src="./Images/project3.jpg" alt="Marketing Campaign">
+                <h3>Marketing Campaign 1</h3>
+                <p>Social media strategy and advertising.</p>
+                <button onclick="location.href='project-details.html?id=project3'" class="view-project-btn">View Project</button>
+            </div>
+
+            <!-- Single Project Card (Web) -->
+            <div class="project-card" data-category="web" id="project4">
+                <img src="./Images/project4.jpg" alt="Web Project">
+                <h3>Web Project 2</h3>
+                <p>Responsive website for a corporate client.</p>
+                <button onclick="location.href='project-details.html?id=project4'" class="view-project-btn">View Project</button>
+            </div>
+
+            <!-- Single Project Card (Mobile) -->
+            <div class="project-card" data-category="mobile" id="project5">
+                <img src="./Images/project5.jpg" alt="Mobile App">
+                <h3>Mobile App 2</h3>
+                <p>Mobile app for booking and reservations.</p>
+                <button onclick="location.href='project-details.html?id=project5'" class="view-project-btn">View Project</button>
+            </div>
+
+            <!-- Single Project Card (Web) -->
+            <div class="project-card" data-category="web" id="project6">
+                <img src="./Images/project6.jpg" alt="Web Project">
+                <h3>Web Project 6</h3>
+                <p>Custom website design with modern UI/UX.</p>
+                <button onclick="location.href='project-details.html?id=project6'" class="view-project-btn">View Project</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Load More Projects Button -->
+    <div class="load-more-btn">
+        <button id="loadMore">Load More Projects</button>
+    </div>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- About section in footer -->
+            <div class="footer-about">
+                <img src="./Images/logo.jpeg" alt="Logeen Logo" class="footer-logo">
+                <p>
+                    A Fully Integrated Digital Transformation Platform
+                    that helps SMEs build, monitor, track and follow up
+                    their businesses as a LEGO!
+                </p>
+
+                <!-- Social media icons -->
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/logeen.company/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/logeen-company-188444188/?originalSubdomain=eg"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/Logeen.company/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@logeencompany2758"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Sitemap links -->
+            <div class="footer-column">
+                <h4>Sitemap</h4>
+                <ul>
+                    <li><a href="./index.html #hero">Home</a></li>
+                    <li><a href="./index.html #about">About Us</a></li>
+                    <li><a href="./index.html #contact">Contact Us</a></li>
+                    <li><a href="./index.html #projects">Projects</a></li>
+                    <li><a href="./index.html #testimonials">Testimonials</a></li>
+                    <li><a href="./index.html #faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter subscription -->
+            <div class="footer-newsletter">
+                <h4>For more information, please contact us.</h4>
+                <form>
+                    <input type="email" placeholder="email@example.com" required>
+                    <button type="submit">Contact Us →</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer bottom links -->
+        <div class="footer-bottom">
+            <p>Copyright © Logeen. All Rights Reserved.</p>
+            <p><a href="#">Terms and Conditions</a> | <a href="#">Usage Agreement</a></p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript files -->
+    <script src="projects.js"></script>
+    <script src="action.js"></script>
+</body>
+</html>

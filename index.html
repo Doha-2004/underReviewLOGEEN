@@ -9,8 +9,19 @@
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
+  <!-- Loader -->
+  <div id="loader">
+  <img src="./Images/logo.jpeg" alt="Logeen Logo" class="logo-spin">
+</div>
+
+
+
+
 
 <!-- ===== Header / Navbar ===== -->
 <header class="navbar">
@@ -32,15 +43,20 @@
     </ul>
   </nav>
 
-  <!-- Language toggle button -->
-  <button class="lang-toggle" id="langToggle">EN</button>
 
-  <!-- Mobile menu toggle -->
+  <!-- Header actions -->
+  <div class="header-actions">
+  <button class="lang-toggle" id="langToggle">EN</button>
+  <button class="dark-toggle" id="darkToggle" title="Toggle Dark Mode">🌙</button>
   <div class="menu-toggle" id="menuToggle">☰</div>
+</div>
+
+
+  
 </header>
 
 <!-- ===== Hero Section ===== -->
-<section class="hero">
+<section class="hero" data-aos="fade-up">
   <div class="hero-overlay"></div> <!-- Overlay for visual effect -->
   <div class="hero-content">
     <h1>Welcome to <span>Logeen Company</span></h1>
@@ -52,7 +68,7 @@
 </section>
 
 <!-- ===== Projects Section ===== -->
-<section class="home-projects">
+<section class="home-projects" data-aos="fade-up">
   <div class="container">
     <h2>Our Projects</h2>
     <div class="line"></div>
@@ -84,7 +100,7 @@
 </section>
 
 <!-- ===== About Us Section ===== -->
-<section class="about-us" id="about">
+<section class="about-us" id="about" data-aos="fade-down">
   <h2>About Us</h2>
   <div class="line"></div>
   
@@ -116,8 +132,60 @@
   </div>
 </section>
 
+<!-- ===== Vision and Goals Section ===== -->
+<section class="tabs-container">
+  <div class="tabs">
+    <button class="tab active" data-tab="vision">🌟 Vision</button>
+    <button class="tab" data-tab="goals">🎯 Goals</button>
+  </div>
+
+  <div class="tab-content active" id="vision">
+    <h3>Our Vision</h3>
+    <p>
+      We aim to create innovative solutions that inspire and deliver exceptional value to our clients.
+    </p>
+  </div>
+
+  <div class="tab-content" id="goals">
+    <h3>Our Goals</h3>
+    <p>
+      To achieve excellence, expand globally, and maintain strong relationships with our partners.
+    </p>
+  </div>
+</section>
+
+<!-- ===== Animated Facts Section ===== -->
+<section class="facts" data-aos="zoom-in">
+  <h2>Facts</h2>
+  <div class="line"></div>
+  <p class="subtitle">
+    Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+  </p>
+  <div class="facts-container">
+    <div class="fact">
+      <h3 class="counter" data-target="232">0</h3>
+      <div class="line"></div>
+      <p>Clients</p>
+    </div>
+    <div class="fact">
+      <h3 class="counter" data-target="521">0</h3>
+      <div class="line"></div>
+      <p>Projects</p>
+    </div>
+    <div class="fact">
+      <h3 class="counter" data-target="1453">0</h3>
+      <div class="line"></div>
+      <p>Hours Of Support</p>
+    </div>
+    <div class="fact">
+      <h3 class="counter" data-target="32">0</h3>
+      <div class="line"></div>
+      <p>Workers</p>
+    </div>
+  </div>
+</section>
 <!-- ===== Contact Section ===== -->
-<section class="contact-section" id="contact">
+<section class="contact-section" id="contact" data-aos="fade-up">
   <h2>Contact</h2>
   <div class="line"></div>
 
@@ -172,8 +240,16 @@
   </div>
 </div>
 
+
+
+
+
+<!-- ===== scrollTopBtn ===== -->
+<button id="scrollTopBtn">↑</button>
+
+
 <!-- ===== Footer ===== -->
-<footer class="footer">
+<footer class="footer" data-aos="fade-up">
   <div class="footer-container">
 
     <!-- Footer about section -->
@@ -222,11 +298,21 @@
     <p><a href="#">Terms and Conditions</a> | <a href="#">Usage Agreement</a></p>
   </div>
 </footer>
-
+<!-- Main JavaScript file -->
+<script src="action.js"></script>
 <!-- FontAwesome Kit (replace with your own kit ID) -->
 <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
 
-<!-- Main JavaScript file -->
-<script src="action.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, 
+    once: false,
+    offset: 100
+  });
+</script>
+
+
 </body>
 </html>

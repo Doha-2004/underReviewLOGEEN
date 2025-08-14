@@ -1,3 +1,15 @@
+
+// action.js
+
+// Show loader animation on page load
+window.addEventListener("load", function(){
+  setTimeout(() => {
+    document.getElementById("loader").style.display = "none";
+  }, 1000); // Hide loader after 1 second
+});
+
+
+
 // Get references to menu toggle button, navigation menu, and language toggle button
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.querySelector("nav ul");
@@ -20,6 +32,7 @@ document.querySelectorAll("nav a").forEach(link => {
     link.classList.add("active");
   });
 });
+
 
 // Toggle between English and Arabic language
 langBtn.addEventListener("click", () => {
@@ -67,11 +80,19 @@ document.addEventListener("DOMContentLoaded", function () {
   handleScroll(); // Check on page load
 });
 
-// Hide loader animation after page load
-window.addEventListener("load", () => {
-  document.querySelector(".loader").classList.add("hidden");
-  document.body.classList.remove("loading");
+// ================= vision and goals tabs =================//
+
+document.querySelectorAll(".tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+
+    tab.classList.add("active");
+    document.getElementById(tab.getAttribute("data-tab")).classList.add("active");
+  });
 });
+
+
 
 // Contact form validation and submission
 document.querySelector('.contact-form').addEventListener('submit', function(e) {
@@ -110,6 +131,80 @@ function showModal(message) {
   modal.style.display = 'flex';
 }
 
+// ================= Animated Counters =================
+// Animated counters in the facts section
+// This code runs when the facts section is in view
+
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+  const speed = 200;
+  let counted = false; // To prevent multiple triggers
+
+  const runCounters = () => {
+    counters.forEach(counter => {
+      counter.innerText = "0";
+      const target = +counter.getAttribute("data-target");
+
+      const updateCount = () => {
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / speed);
+
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCount();
+    });
+    counted = true;
+  };
+  // Function to check if an element is in the viewport
+
+  const isInViewport = (element) => {
+    const rect = element.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+  };
+
+  const factsSection = document.querySelector(".facts");
+  // Check if the facts section is in viewport on page load
+  if (isInViewport(factsSection)) {
+    runCounters();
+  }
+
+  // Add scroll event listener to check if the facts section comes into view
+  window.addEventListener("scroll", () => {
+    if (!counted && isInViewport(factsSection)) {
+      runCounters();
+    }
+  });
+});
+
+  
+
+// Scroll to top button functionality
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+
+
+
 // ================= Footer Newsletter Form Validation =================
 document.addEventListener("DOMContentLoaded", function () {
   // Handle newsletter form submission
@@ -134,3 +229,26 @@ document.addEventListener("DOMContentLoaded", function () {
     return re.test(email);
   }
 });
+// ================= Dark Mode Toggle =================
+// Get the dark mode toggle button
+const darkToggle = document.getElementById("darkToggle");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
+  darkToggle.innerHTML = "☀️";
+}
+
+// Toggle theme
+darkToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("theme", "dark");
+    darkToggle.innerHTML = "☀️";
+  } else {
+    localStorage.setItem("theme", "light");
+    darkToggle.innerHTML = "🌙";
+  }
+});
+

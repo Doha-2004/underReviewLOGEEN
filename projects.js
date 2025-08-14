@@ -6,12 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Array containing extra projects that can be loaded dynamically
   const extraProjects = [
-    { id: "project6", img: "./Images/project7.jpg", title: "E-commerce Website", description: "Full-featured online store", category: "web" },
-    { id: "project7", img: "./Images/project8.jpg", title: "Social Media Campaign", description: "Engaging social media content", category: "marketing" },
-    { id: "project8", img: "./Images/project9.jpg", title: "Corporate Branding", description: "Comprehensive branding strategy", category: "branding" },
-    { id: "project9", img: "./Images/project10.jpg", title: "Mobile Game", description: "Fun and addictive mobile game", category: "game" },
-    { id: "project10", img: "./Images/project11.jpg", title: "Data Analytics Dashboard", description: "Insights and analytics at a glance", category: "data" },
-    { id: "project11", img: "./Images/project12.jpg", title: "AI Chatbot", description: "Intelligent chatbot for customer support", category: "ai" }
+    { id: "project6", img: "./Images/project7.jpg", title: "E-commerce Website", description: "Full-featured online store", category: "web"  , link:"https://example.com/project6"},
+    { id: "project7", img: "./Images/project8.jpg", title: "Social Media Campaign", description: "Engaging social media content", category: "marketing" , link:"https://example.com/project7"},
+    { id: "project8", img: "./Images/project9.jpg", title: "Corporate Branding", description: "Comprehensive branding strategy", category: "branding" , link:"https://example.com/project8"},
+    { id: "project9", img: "./Images/project10.jpg", title: "Mobile Game", description: "Fun and addictive mobile game", category: "game" , link:"https://example.com/project9"},
+    { id: "project10", img: "./Images/project11.jpg", title: "Data Analytics Dashboard", description: "Insights and analytics at a glance", category: "data" , link:"https://example.com/project10"},
+    { id: "project11", img: "./Images/project12.jpg", title: "AI Chatbot", description: "Intelligent chatbot for customer support", category: "ai"  , link:"https://example.com/project11"}
   ];
 
   let loaded = false; // Tracks whether extra projects are loaded or not
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="${p.img}" alt="${p.title}">
           <h3>${p.title}</h3>
           <p>${p.description}</p>
-          <button onclick="location.href='project-details.html?id=${p.id}'" class="view-project-btn">View Project</button>`;
+          <button href="${p.link}" class="view-project-btn">View Project</button>`;
         projectsGrid.appendChild(card);
       });
       loaded = true;
@@ -97,36 +97,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  // --- Project Details Page ---
-  const params = new URLSearchParams(window.location.search); // Get URL parameters
-  const projectId = params.get('id'); // Get "id" parameter from URL
 
-  // Data for all projects (used to dynamically populate details page)
-  const projectsData = {
-    project1: { img: './Images/project1.jpg', title: 'Web Project 1', description: 'Custom website design with modern UI/UX.' },
-    project2: { img: './Images/project2.jpg', title: 'Mobile App 1', description: 'iOS and Android application for e-commerce.' },
-    project3: { img: './Images/project3.jpg', title: 'Marketing Campaign 1', description: 'Social media strategy and advertising.' },
-    project4: { img: './Images/project4.jpg', title: 'Web Project 2', description: 'Responsive website for a corporate client.' },
-    project5: { img: './Images/project5.jpg', title: 'Mobile App 2', description: 'Mobile app for booking and reservations.' },
-    project6: { img: './Images/project6.jpg', title: 'E-commerce Website', description: 'Full-featured online store' },
-    project7: { img: './Images/project7.jpg', title: 'Social Media Campaign', description: 'Engaging social media content' },
-    project8: { img: './Images/project8.jpg', title: 'Corporate Branding', description: 'Comprehensive branding strategy' },
-    project9: { img: './Images/project9.jpg', title: 'Mobile Game', description: 'Fun and addictive mobile game' },
-    project10: { img: './Images/project10.jpg', title: 'Data Analytics Dashboard', description: 'Insights and analytics at a glance' },
-    project11: { img: './Images/project11.jpg', title: 'AI Chatbot', description: 'Intelligent chatbot for customer support' }
-  };
+  
+// ================= Dark Mode Toggle =================
+// Get the dark mode toggle button
+const darkToggle = document.getElementById("darkToggle");
 
-  // If a valid project ID is found, update the page with project details
-  if (projectId && projectsData[projectId]) {
-    document.getElementById('projectImage').src = projectsData[projectId].img;
-    document.getElementById('projectImage').alt = projectsData[projectId].title;
-    document.getElementById('projectTitle').textContent = projectsData[projectId].title;
-    document.getElementById('projectDescription').textContent = projectsData[projectId].description;
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("dark-mode");
+  darkToggle.innerHTML = "🌙";
+}
+
+// Toggle theme
+darkToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("theme", "dark");
+    darkToggle.innerHTML = "☀️";
   } else {
-    // If project not found, show a "not found" message
-    document.getElementById('projectTitle').textContent = 'Project Not Found';
-    document.getElementById('projectDescription').textContent = 'Sorry, we couldn\'t find the project you are looking for.';
-    document.getElementById('projectImage').style.display = 'none';
+    localStorage.setItem("theme", "light");
+    darkToggle.innerHTML = "🌙";
   }
 });
+
+

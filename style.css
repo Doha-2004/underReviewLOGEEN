@@ -789,7 +789,7 @@ nav a.active {
 
 .add-review button {
   padding: 12px;
-  background: var(--color-primary);
+  background: var(--color-accent);
   border: none;
   color: #fff;
   font-size: 1rem;
@@ -799,7 +799,7 @@ nav a.active {
 }
 
 .add-review button:hover {
-  background: #229b89;
+  background: var(--color-secondary);
 }
 
  

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- AOS Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 </head>
 <body>
@@ -153,6 +155,64 @@
     </p>
   </div>
 </section>
+<!-- ===== Testimonials Section ===== -->
+ <section class="testimonials" id="testimonials" data-aos="fade-up">
+  <h2>Testimonials</h2>
+  <p class="subtitle">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+
+  <div class="testimonial-container">
+    <div class="testimonial active">
+      <img src="./Images/client.jpg" alt="Sara Wilsson">
+      <h3>Sara Wilsson</h3>
+      <span class="role">Designer</span>
+      <div class="stars">★★★★★</div>
+      <p class="quote">Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</p>
+    </div>
+
+    <div class="testimonial">
+      <img src="./Images/client.jpg" alt="John Doe">
+      <h3>John Doe</h3>
+      <span class="role">Developer</span>
+      <div class="stars">★★★★★</div>
+      <p class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    </div>
+
+    <div class="testimonial">
+      <img src="./Images/client.jpg" alt="Emily Smith">
+      <h3>Emily Smith</h3>
+      <span class="role">Marketing</span>
+      <div class="stars">★★★★☆</div>
+      <p class="quote">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+    </div>
+  </div>
+
+  <!-- indicators -->
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+<section class="add-review">
+  <h2>Add Your Review</h2>
+  <form id="reviewForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="text" id="role" placeholder="Your Role (e.g. Designer)" required>
+    <input type="text" id="image" placeholder="Image URL" required>
+    <textarea id="quote" placeholder="Your Review" required></textarea>
+    <select id="rating" required>
+      <option value="">Select Rating</option>
+      <option value="5">★★★★★</option>
+      <option value="4">★★★★☆</option>
+      <option value="3">★★★☆☆</option>
+      <option value="2">★★☆☆☆</option>
+      <option value="1">★☆☆☆☆</option>
+    </select>
+    <button type="submit">Submit Review</button>
+  </form>
+</section>
+
+
 
 <!-- ===== Animated Facts Section ===== -->
 <section class="facts" data-aos="zoom-in">
@@ -184,6 +244,7 @@
     </div>
   </div>
 </section>
+
 <!-- ===== Contact Section ===== -->
 <section class="contact-section" id="contact" data-aos="fade-up">
   <h2>Contact</h2>
@@ -241,6 +302,44 @@
 </div>
 
 
+
+<!-- ===== FAQ Section ===== -->
+<section class="faq" id="faq" data-aos="fade-up">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-container">
+
+    <!-- سؤال 1 -->
+    <div class="faq-item">
+      <button class="faq-question">
+        What is Logeen? <span class="arrow">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Logeen is a digital transformation platform that helps SMEs build, monitor, and grow their businesses.</p>
+      </div>
+    </div>
+
+    <!-- سؤال 2 -->
+    <div class="faq-item">
+      <button class="faq-question">
+        How can I contact support? <span class="arrow">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>You can reach us via the contact form or email us directly at support@logeen.com.</p>
+      </div>
+    </div>
+
+    <!-- سؤال 3 -->
+    <div class="faq-item">
+      <button class="faq-question">
+        Do you offer customized solutions? <span class="arrow">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes! We tailor our solutions based on the unique needs of your business.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 

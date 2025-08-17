@@ -131,6 +131,85 @@ function showModal(message) {
   modal.style.display = 'flex';
 }
 
+// testimonial slider functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const testimonials = document.querySelectorAll(".testimonial");
+  const dots = document.querySelectorAll(".dot");
+  let index = 0;
+
+  function showTestimonial(i) {
+    testimonials.forEach((t, idx) => {
+      t.classList.remove("active");
+      dots[idx].classList.remove("active");
+    });
+    testimonials[i].classList.add("active");
+    dots[i].classList.add("active");
+  }
+
+  function nextTestimonial() {
+    index = (index + 1) % testimonials.length;
+    showTestimonial(index);
+  }
+
+  setInterval(nextTestimonial, 5000);
+
+  dots.forEach((dot, idx) => {
+    dot.addEventListener("click", () => {
+      index = idx;
+      showTestimonial(index);
+    });
+  });
+
+  showTestimonial(index);
+
+  // --- Add New Review ---
+  const reviewForm = document.getElementById("reviewForm");
+  reviewForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const role = document.getElementById("role").value;
+    const image = document.getElementById("image").value;
+    const quote = document.getElementById("quote").value;
+    const rating = document.getElementById("rating").value;
+
+    // create new testimonial
+    const newTestimonial = document.createElement("div");
+    newTestimonial.classList.add("testimonial");
+    newTestimonial.innerHTML = `
+      <img src="${image}" alt="${name}">
+      <h3>${name}</h3>
+      <span class="role">${role}</span>
+      <div class="stars">${"★".repeat(rating)}${"☆".repeat(5 - rating)}</div>
+      <p class="quote">${quote}</p>
+    `;
+
+    document.querySelector(".testimonial-container").appendChild(newTestimonial);
+
+    // add new dot
+    const newDot = document.createElement("span");
+    newDot.classList.add("dot");
+    document.querySelector(".dots").appendChild(newDot);
+
+    newDot.addEventListener("click", () => {
+      index = document.querySelectorAll(".testimonial").length - 1;
+      showTestimonial(index);
+    });
+    newDot.addEventListener("mouseenter", () => {
+      index = document.querySelectorAll(".testimonial").length - 1;
+      showTestimonial(index);
+    });
+
+    // reset form
+
+
+    reviewForm.reset();
+    alert("✅ Review added successfully!");
+  });
+});
+
+
+
 // ================= Animated Counters =================
 // Animated counters in the facts section
 // This code runs when the facts section is in view
@@ -203,6 +282,13 @@ scrollBtn.addEventListener("click", () => {
 });
 
 
+// FAQ Toggle
+document.querySelectorAll(".faq-question").forEach(button => {
+  button.addEventListener("click", () => {
+    const faqItem = button.parentElement;
+    faqItem.classList.toggle("active");
+  });
+});
 
 
 // ================= Footer Newsletter Form Validation =================

@@ -81,8 +81,12 @@
 
 .project-card img {
   width: 100%;
-  height: 180px;
+  height: auto;
+  border-bottom: 2px solid #ff5722; /* Accent border */
+  border-radius: 10px 10px 0 0; /* Rounded top corners */
   object-fit: cover; /* Keep image proportion while filling area */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  
 }
 
 .project-card h3 {

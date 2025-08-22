@@ -102,24 +102,18 @@ document.addEventListener("DOMContentLoaded", () => {
 // ================= Dark Mode Toggle =================
 // Get the dark mode toggle button
 const darkToggle = document.getElementById("darkToggle");
-
-// Load saved theme
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("dark-mode");
-  darkToggle.innerHTML = "🌙";
-}
-
-// Toggle theme
-darkToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  
-  if (document.body.classList.contains("dark-mode")) {
-    localStorage.setItem("theme", "dark");
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
     darkToggle.innerHTML = "☀️";
-  } else {
-    localStorage.setItem("theme", "light");
-    darkToggle.innerHTML = "🌙";
   }
-});
-
+  darkToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+      darkToggle.innerHTML = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      darkToggle.innerHTML = "🌙";
+    }
+  });
 

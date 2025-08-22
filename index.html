@@ -36,7 +36,7 @@
   <!-- Navigation menu -->
   <nav id="navMenu">
     <ul>
-      <li><a href="#index" class="active">Home</a></li>
+      <li><a href="#hero" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#projectsPreview">Projects</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
@@ -157,7 +157,7 @@
 </section>
 <!-- ===== Testimonials Section ===== -->
  <section class="testimonials" id="testimonials" data-aos="fade-up">
-  <h2>Testimonials</h2>
+  <h2>What People Say</h2>
   <p class="subtitle">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
 
   <div class="testimonial-container">
@@ -193,12 +193,16 @@
     <span class="dot"></span>
   </div>
 </section>
+<!-- ===== Add Review Section ===== -->
 <section class="add-review">
   <h2>Add Your Review</h2>
   <form id="reviewForm">
     <input type="text" id="name" placeholder="Your Name" required>
     <input type="text" id="role" placeholder="Your Role (e.g. Designer)" required>
-    <input type="text" id="image" placeholder="Image URL" required>
+    
+    <!-- رفع صورة من الجهاز -->
+    <input type="file" id="image" accept="image/*" required>
+    
     <textarea id="quote" placeholder="Your Review" required></textarea>
     <select id="rating" required>
       <option value="">Select Rating</option>
@@ -211,6 +215,9 @@
     <button type="submit">Submit Review</button>
   </form>
 </section>
+
+
+
 
 
 

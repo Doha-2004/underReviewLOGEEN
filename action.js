@@ -2,7 +2,7 @@
 window.addEventListener("load", function () {
   setTimeout(() => {
     document.getElementById("loader").style.display = "none";
-  }, 1000);
+  }, 2500); // Minimum 2.5 seconds
 });
 
 // ================= DOMContentLoaded =================

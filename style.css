@@ -55,20 +55,36 @@ html, body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+    perspective: 1000px;
+
 }
 
 /* Logo Spinner Animation */
 .logo-spin {
-  width: 120px; 
+  width: 320px;
   height: auto;
-  animation: spin 2.5s linear infinite;
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+  transform-style: preserve-3d;
+
 }
 
 /* Spin Animation */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotateY(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotateY(180deg) scale(1.2);
+  }
+
+  100% {
+    transform: rotateY(360deg) scale(1.5);
+  }
 }
+
+
 
 /* ===== General Styles ===== */
 body {

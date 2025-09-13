@@ -38,7 +38,7 @@ html, body {
 }
 
 
-img, iframe, video {
+ iframe, video {
   max-width: 100%;
   height: auto;
   display: block;
@@ -1329,6 +1329,54 @@ body.dark-mode .footer-bottom a:hover {
     width: 100%;
     height: auto;
   }
+  .about-content {
+    max-width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+  .tabs-container {
+    padding: 10px;
+  }
+  .tabs {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tab {
+    width: 100%;
+    text-align: center;
+  }
+  .tab-content {
+    padding: 15px;
+  }
+  .contact-container {
+    flex-direction: column;
+    padding: 0 15px;
+  }
+  
+  .contact-info,
+  .contact-form {
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .add-review form {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .facts-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-about {
+    max-width: none;
+  }
+    
 }
 
 @media screen and (max-width: 600px) {
@@ -1421,6 +1469,7 @@ body.dark-mode .footer-bottom a:hover {
     gap: 30px;
   }
 
+  
   .footer-container {
     grid-template-columns: 1fr;
     text-align: center;

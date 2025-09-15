@@ -34,7 +34,7 @@ body.dark-mode {
 
 html, body {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 
@@ -55,8 +55,7 @@ html, body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-    perspective: 1000px;
-
+  perspective: 1000px;
 }
 
 /* Logo Spinner Animation */
